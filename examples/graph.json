@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "dataset_kind": "synthetic",
+  "nodes": [
+    "certificate_sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "dns_a:192.0.2.10",
+    "domain:archive.lab.test",
+    "domain:cdn.partner.test",
+    "domain:mail.lab.test",
+    "domain:portal.lab.test"
+  ],
+  "observations": [
+    {
+      "from": "domain:portal.lab.test",
+      "to": "certificate_sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "relation": "certificate_sha256",
+      "id": "C01",
+      "domain": "portal.lab.test",
+      "kind": "certificate_sha256",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "first_seen": "2024-01-01",
+      "last_seen": "2024-01-10",
+      "source": "synthetic-lab-v1"
+    },
+    {
+      "from": "domain:mail.lab.test",
+      "to": "certificate_sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "relation": "certificate_sha256",
+      "id": "C02",
+      "domain": "mail.lab.test",
+      "kind": "certificate_sha256",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "first_seen": "2024-01-05",
+      "last_seen": "2024-01-12",
+      "source": "synthetic-lab-v1"
+    },
+    {
+      "from": "domain:portal.lab.test",
+      "to": "dns_a:192.0.2.10",
+      "relation": "dns_a",
+      "id": "D01",
+      "domain": "portal.lab.test",
+      "kind": "dns_a",
+      "value": "192.0.2.10",
+      "first_seen": "2024-01-01",
+      "last_seen": "2024-01-10",
+      "source": "synthetic-lab-v1"
+    },
+    {
+      "from": "domain:mail.lab.test",
+      "to": "dns_a:192.0.2.10",
+      "relation": "dns_a",
+      "id": "D02",
+      "domain": "mail.lab.test",
+      "kind": "dns_a",
+      "value": "192.0.2.10",
+      "first_seen": "2024-01-05",
+      "last_seen": "2024-01-12",
+      "source": "synthetic-lab-v1"
+    },
+    {
+      "from": "domain:archive.lab.test",
+      "to": "dns_a:192.0.2.10",
+      "relation": "dns_a",
+      "id": "D03",
+      "domain": "archive.lab.test",
+      "kind": "dns_a",
+      "value": "192.0.2.10",
+      "first_seen": "2024-02-01",
+      "last_seen": "2024-02-08",
+      "source": "synthetic-lab-v1"
+    },
+    {
+      "from": "domain:cdn.partner.test",
+      "to": "dns_a:192.0.2.10",
+      "relation": "dns_a",
+      "id": "D04",
+      "domain": "cdn.partner.test",
+      "kind": "dns_a",
+      "value": "192.0.2.10",
+      "first_seen": "2024-01-05",
+      "last_seen": "2024-01-06",
+      "source": "synthetic-shared-host-v1"
+    }
+  ],
+  "relationships": [
+    {
+      "from": "cdn.partner.test",
+      "to": "mail.lab.test",
+      "relation": "shared_ip",
+      "value": "192.0.2.10",
+      "overlap_start": "2024-01-05",
+      "overlap_end": "2024-01-06",
+      "evidence_ids": [
+        "D02",
+        "D04"
+      ],
+      "assessment": "lead_only_not_attribution"
+    },
+    {
+      "from": "cdn.partner.test",
+      "to": "portal.lab.test",
+      "relation": "shared_ip",
+      "value": "192.0.2.10",
+      "overlap_start": "2024-01-05",
+      "overlap_end": "2024-01-06",
+      "evidence_ids": [
+        "D01",
+        "D04"
+      ],
+      "assessment": "lead_only_not_attribution"
+    },
+    {
+      "from": "mail.lab.test",
+      "to": "portal.lab.test",
+      "relation": "shared_certificate",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "overlap_start": "2024-01-05",
+      "overlap_end": "2024-01-10",
+      "evidence_ids": [
+        "C01",
+        "C02"
+      ],
+      "assessment": "lead_only_not_attribution"
+    },
+    {
+      "from": "mail.lab.test",
+      "to": "portal.lab.test",
+      "relation": "shared_ip",
+      "value": "192.0.2.10",
+      "overlap_start": "2024-01-05",
+      "overlap_end": "2024-01-10",
+      "evidence_ids": [
+        "D01",
+        "D02"
+      ],
+      "assessment": "lead_only_not_attribution"
+    }
+  ],
+  "warning": "Intervals are observation bounds, not proof of continuous use. Shared infrastructure is not common ownership."
+}

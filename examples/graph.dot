@@ -1,0 +1,18 @@
+graph infrastructure {
+  rankdir=LR;
+  graph [label="SYNTHETIC OBSERVATIONS — not ownership or attribution", labelloc=t, fontname="Arial", pad=0.3];
+  node [shape=box, style="rounded,filled", fontname="Arial", fillcolor="#edf4fc"];
+  edge [fontname="Arial", fontsize=10, color="#60758a"];
+  "certificate_sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" [label="certificate SHA-256\naaaaaaaaaaaa...aaaaaaaa"];
+  "dns_a:192.0.2.10" [label="dns_a:192.0.2.10"];
+  "domain:archive.lab.test" [label="domain:archive.lab.test"];
+  "domain:cdn.partner.test" [label="domain:cdn.partner.test"];
+  "domain:mail.lab.test" [label="domain:mail.lab.test"];
+  "domain:portal.lab.test" [label="domain:portal.lab.test"];
+  "domain:portal.lab.test" -- "certificate_sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" [label="C01 2024-01-01..2024-01-10"];
+  "domain:mail.lab.test" -- "certificate_sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" [label="C02 2024-01-05..2024-01-12"];
+  "domain:portal.lab.test" -- "dns_a:192.0.2.10" [label="D01 2024-01-01..2024-01-10"];
+  "domain:mail.lab.test" -- "dns_a:192.0.2.10" [label="D02 2024-01-05..2024-01-12"];
+  "domain:archive.lab.test" -- "dns_a:192.0.2.10" [label="D03 2024-02-01..2024-02-08"];
+  "domain:cdn.partner.test" -- "dns_a:192.0.2.10" [label="D04 2024-01-05..2024-01-06"];
+}

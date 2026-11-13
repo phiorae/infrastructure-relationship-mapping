@@ -1,0 +1,10 @@
+{
+  "dataset_kind": "synthetic",
+  "allowed_domains": [
+    "portal.lab.test",
+    "mail.lab.test",
+    "archive.lab.test",
+    "cdn.partner.test"
+  ],
+  "authorization_note": "Reserved .test names and TEST-NET IPv4; entirely synthetic offline training dataset. No ownership of real domains claimed."
+}
