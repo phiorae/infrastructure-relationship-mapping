@@ -54,4 +54,4 @@ archive.lab.test использует тот же IP в другом интер�
 Даже совпадающие интервалы наблюдений не доказывают одновременное использование.
 Нет ASN/WHOIS/CT collector: допускается только импорт разрешённых выгрузок.
 Нет attribution, оценки maliciousness и автоматического pivot на соседние домены.
-CI настроен; удалённый запуск ещё не подтверждён.
+GitHub Actions: [успешный запуск на Python 3.11](https://github.com/phiorae/infrastructure-relationship-mapping/actions/runs/43427254970), 2026-11-13.
